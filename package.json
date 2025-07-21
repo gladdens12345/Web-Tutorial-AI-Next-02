@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@stripe/firestore-stripe-payments": "^0.0.7",
+    "@invertase/firestore-stripe-payments": "^0.0.8",
     "@stripe/stripe-js": "^7.3.0",
     "@upstash/ratelimit": "^2.0.5",
     "@vercel/kv": "^3.0.0",

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { getApp } from '@firebase/app';
-import { getStripePayments, createCheckoutSession } from '@stripe/firestore-stripe-payments';
+import { getStripePayments, createCheckoutSession } from '@invertase/firestore-stripe-payments';
 
 // Initialize Stripe Payments SDK
 const app = getApp();
@@ -46,8 +46,8 @@ export default function SubscriptionFlow() {
       }
       
       // Create checkout session using Firebase Extension
+      // Default behavior is subscription mode when no mode specified
       const session = await createCheckoutSession(payments, {
-        mode: 'payment', // Critical for one-time payments!
         price: priceId,
         success_url: `${window.location.origin}/subscription-success`,
         cancel_url: `${window.location.origin}/pricing`,

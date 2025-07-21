@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { getApp } from '@firebase/app';
-import { getStripePayments, getProducts } from '@stripe/firestore-stripe-payments';
+import { getStripePayments, getProducts } from '@invertase/firestore-stripe-payments';
 
 const app = getApp();
 const payments = getStripePayments(app, {
