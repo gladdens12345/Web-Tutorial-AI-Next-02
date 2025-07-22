@@ -1,0 +1,32 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Computer Monitor -->
+  <rect x="100" y="150" width="312" height="200" rx="10" fill="#000000" stroke="#000000" stroke-width="4"/>
+  <rect x="110" y="160" width="292" height="150" fill="#ffffff"/>
+  
+  <!-- Monitor Stand -->
+  <rect x="230" y="350" width="52" height="40" fill="#000000"/>
+  <rect x="200" y="390" width="112" height="10" fill="#000000"/>
+  
+  <!-- Hand with Thumbs Up coming from screen -->
+  <g transform="translate(380, 200)">
+    <!-- Wrist/Arm -->
+    <ellipse cx="0" cy="20" rx="15" ry="25" fill="#000000"/>
+    
+    <!-- Palm -->
+    <ellipse cx="-20" cy="0" rx="20" ry="25" fill="#000000"/>
+    
+    <!-- Thumb (pointing up) -->
+    <ellipse cx="-35" cy="-25" rx="8" ry="20" fill="#000000" transform="rotate(-30 -35 -25)"/>
+    
+    <!-- Fingers -->
+    <ellipse cx="-40" cy="5" rx="6" ry="15" fill="#000000"/>
+    <ellipse cx="-35" cy="15" rx="6" ry="15" fill="#000000"/>
+    <ellipse cx="-28" cy="20" rx="6" ry="15" fill="#000000"/>
+    <ellipse cx="-20" cy="18" rx="6" ry="12" fill="#000000"/>
+  </g>
+  
+  <!-- Screen content lines (to show it's active) -->
+  <rect x="130" y="180" width="100" height="4" fill="#000000"/>
+  <rect x="130" y="200" width="150" height="4" fill="#000000"/>
+  <rect x="130" y="220" width="120" height="4" fill="#000000"/>
+</svg>
