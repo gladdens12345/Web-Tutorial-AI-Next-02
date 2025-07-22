@@ -18,7 +18,7 @@ export default function Logo({ variant = 'horizontal', size = 'md', className = 
   if (variant === 'icon-only') {
     return (
       <Image
-        src="/icon.png"
+        src="/placeholder-icon.svg"
         alt="Web Tutorial AI"
         width={currentSize.icon}
         height={currentSize.icon}
@@ -30,7 +30,7 @@ export default function Logo({ variant = 'horizontal', size = 'md', className = 
   return (
     <div className={`flex items-center ${variant === 'vertical' ? 'flex-col' : 'gap-3'} ${className}`}>
       <Image
-        src="/icon.png"
+        src="/placeholder-icon.svg"
         alt="Web Tutorial AI Icon"
         width={currentSize.icon}
         height={currentSize.icon}
