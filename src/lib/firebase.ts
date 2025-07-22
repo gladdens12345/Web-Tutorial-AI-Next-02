@@ -1,5 +1,5 @@
 import { initializeApp, getApps } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -14,5 +14,28 @@ const firebaseConfig = {
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+// Google Auth Provider
+const googleProvider = new GoogleAuthProvider();
+
+// Auth functions
+export const signInWithGoogle = async () => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    return result;
+  } catch (error) {
+    console.error('Error signing in with Google:', error);
+    throw error;
+  }
+};
+
+export const logOut = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error('Error signing out:', error);
+    throw error;
+  }
+};
 
 export { app, auth, db };
