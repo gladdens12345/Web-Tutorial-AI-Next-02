@@ -2,13 +2,14 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { User, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
+import { auth, signInWithGoogle as firebaseSignInWithGoogle } from '@/lib/firebase';
 
 interface AuthContextType {
   user: User | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (email: string, password: string) => Promise<void>;
+  signInWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
 }
 
@@ -35,6 +36,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await createUserWithEmailAndPassword(auth, email, password);
   };
 
+  const signInWithGoogle = async () => {
+    await firebaseSignInWithGoogle();
+  };
+
   const logout = async () => {
     await signOut(auth);
   };
@@ -44,6 +49,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     loading,
     login,
     register,
+    signInWithGoogle,
     logout,
   };
 
