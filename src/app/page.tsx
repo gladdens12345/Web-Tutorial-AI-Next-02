@@ -2,7 +2,6 @@
 
 import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
-import Logo from '@/components/Logo';
 
 export default function HomePage() {
   const { user, loading, logout } = useAuth();
@@ -22,7 +21,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
-              <Logo size="sm" />
+              <h1 className="text-2xl font-bold text-gray-900">Web Tutorial AI</h1>
             </div>
             <div className="flex items-center space-x-4">
               {user ? (
@@ -51,9 +50,6 @@ export default function HomePage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="mb-8">
-            <Logo size="lg" />
-          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
             Intelligent AI Assistance for Web Browsing
           </h2>
@@ -90,7 +86,7 @@ export default function HomePage() {
               View Pricing
             </Link>
             <div className="text-sm text-gray-500">
-              1 hour free daily • $5/month for unlimited usage
+              1 hour free daily • $1/month for unlimited usage
             </div>
           </div>
         </div>
